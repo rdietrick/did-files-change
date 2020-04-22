@@ -15,5 +15,5 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args: 
-    - ${{ github.sha }}
+    - ${{ GITHUB_SHA }}
     - ${{ inputs.pathspec }}

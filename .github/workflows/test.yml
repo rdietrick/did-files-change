@@ -14,7 +14,8 @@ jobs:
       
       - name: Check has changes
         id: has-changes
-        uses: rdietrick/did-files-change@v0.1-alpha
+        #uses: rdietrick/did-files-change@v0.1-alpha
+        uses: .
         with:
           pathspec: test
 
