@@ -19,4 +19,5 @@ jobs:
           pathspec: test
 
       - name: Debug
-        run: echo "Has changes: ${{ steps.id.has-changes.outputs.changed }}"
+        run: |
+          echo "Has changes: ${{ steps.id.has-changes.outputs.changed }}"
