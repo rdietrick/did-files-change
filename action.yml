@@ -1,0 +1,19 @@
+name: "Did Files Change"
+description: "Check if specific files changed in a push"
+branding:
+  icon: "info"
+  color: "orange"
+inputs:
+  pathspec:
+    description: "Pattern used to limit paths in the `git diff-tree` command."
+    required: false
+    default: ""
+outputs:
+  changed:
+    description: "Whether or not files matched by the pathspec were changed."
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args: 
+    - ${{ github.sha }}
+    - ${{ inputs.pathspec }}
