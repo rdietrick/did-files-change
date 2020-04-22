@@ -16,7 +16,7 @@ jobs:
         id: has-changes
         uses: rdietrick/did-files-change@v0.1-alpha
         with:
-          - pathspec: test
+          pathspec: test
         
         - name: Debug
           run: echo "Has changes: ${{ steps.id.has-changes.outputs.changed }}"
