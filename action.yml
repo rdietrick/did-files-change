@@ -8,6 +8,9 @@ inputs:
     description: "Pattern used to limit paths in the `git diff-tree` command."
     required: false
     default: ""
+  sha:
+    description: "The SHA of the commit to compare"
+    required: true
 outputs:
   changed:
     description: "Whether or not files matched by the pathspec were changed."
@@ -15,5 +18,5 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args: 
-    - ${{ github.sha }}
+    - ${{ inputs.sha }}
     - ${{ inputs.pathspec }}
