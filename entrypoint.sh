@@ -13,4 +13,6 @@ function check() {
   fi
 }
 
-echo ::set-output name=changed::$(check)
+CHANGED=$(check)
+echo "CHANGED=$CHANGED"
+echo ::set-output name=changed::$CHANGED
