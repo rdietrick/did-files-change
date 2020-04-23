@@ -12,7 +12,7 @@ jobs:
       
       - name: Check has changes
         id: check-changes
-        uses: rdietrick/did-files-change@master
+        uses: rdietrick/did-files-change@v1.0
         with:
           pathspec: .
 
