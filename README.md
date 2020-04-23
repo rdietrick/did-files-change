@@ -18,8 +18,7 @@ The value will be 0 if the files matched by the `pathspec` input parameter were 
 
 ```yaml
 name: My Workflow
-on:
-  push
+on: push
       
 jobs:
   build:
