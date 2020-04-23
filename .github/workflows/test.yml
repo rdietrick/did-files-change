@@ -23,7 +23,9 @@ jobs:
         id: has-changes
         run: |
         PATHSPEC="."
-        if [[ -z "$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA $PATHSPEC)" ]]; then CHANGED="0"; else CHANGED="1"; fi
+        SHA=$GITHUB_SHA
+        echo "SHA: $SHA"
+        if [[ -z "$(git diff-tree --no-commit-id --name-only -r $SHA $PATHSPEC)" ]]; then CHANGED="0"; else CHANGED="1"; fi
         echo ::set-output name=changed::$CHANGED
 
       - name: Debug
