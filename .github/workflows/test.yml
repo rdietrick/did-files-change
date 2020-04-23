@@ -23,4 +23,4 @@ jobs:
 
       - name: Debug
         run: |
-          echo "Has changes: ${{ steps.id.check-changes.outputs.changed }}"
+          echo "Has changes: ${{ steps.check-changes.outputs.changed }}"
