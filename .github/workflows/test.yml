@@ -27,8 +27,6 @@ jobs:
         run: |
         echo "SHA: $SHA"
         if [[ -z "$(git diff-tree --no-commit-id --name-only -r $SHA $PATHSPEC)" ]]; then CHANGED="0"; else CHANGED="1"; fi
-        echo "CHANGED: $CHANGED"
-        #echo ::set-output name=changed::$CHANGED
 
       - name: Debug
         run: |
