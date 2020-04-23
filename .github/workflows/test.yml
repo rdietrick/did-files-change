@@ -1,12 +1,8 @@
 name: Test
-on:
-  push:
-    branches:
-      - 'test-workflow'
+on: push
       
 jobs:
   build:
-    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,9 +12,9 @@ jobs:
       
       - name: Check has changes
         id: check-changes
-        uses: rdietrick/did-files-change@test-workflow
+        uses: rdietrick/did-files-change@master
         with:
-          pathspec: test
+          pathspec: .
 
       - name: Debug
         run: |
