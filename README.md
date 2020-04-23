@@ -36,7 +36,6 @@ jobs:
         id: check-changes
         uses: rdietrick/did-files-change@test-workflow
         with:
-          sha: ${{ github.sha }}
           pathspec: test
 
       - name: Debug

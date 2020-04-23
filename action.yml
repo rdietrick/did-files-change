@@ -9,7 +9,7 @@ inputs:
     required: false
     default: ""
   sha:
-    description: "The SHA of the commit to compare"
+    description: "The SHA of the commit to compare.  Defaults to current commit SHA."
     required: false
     default: ${{ github.sha }}
 outputs:
