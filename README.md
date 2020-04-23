@@ -41,9 +41,9 @@ jobs:
 
       - name: Debug
         run: |
-          echo "Changes detected in test directory: ${{ steps.id.check-changes.outputs.changed }}"
+          echo "Changes detected in test directory: ${{ steps.check-changes.outputs.changed }}"
 ```
 
-In the example above, `steps.id.check-changes.outputs.changed` will be set
+In the example above, `steps.check-changes.outputs.changed` will be set
 to 1 if the current commit included any files under the `test` directory in the repo.
 

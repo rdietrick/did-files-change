@@ -1,7 +1,7 @@
 name: "Did Files Change"
 description: "Check if specific files changed in a push"
 branding:
-  icon: "info"
+  icon: "check-circle"
   color: "orange"
 inputs:
   pathspec:
@@ -10,7 +10,8 @@ inputs:
     default: ""
   sha:
     description: "The SHA of the commit to compare"
-    required: true
+    required: false
+    default: ${{ github.sha }}
 outputs:
   changed:
     description: "Whether or not files matched by the pathspec were changed."
