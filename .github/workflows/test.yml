@@ -14,25 +14,25 @@ jobs:
         with:
           fetch-depth: 2
       
-      # - name: Check has changes
-      #   id: has-changes
-      #   uses: rdietrick/did-files-change@test-workflow
-      #   with:
-      #     sha: ${{ github.sha }}
-      #     pathspec: .
-
       - name: Check has changes
         id: has-changes
-        env:
-          SHA: ${{ github.sha }}
-          PATHSPEC: "."
-        run: |
-          echo "SHA: $SHA"
-          git log -1
-          git diff-tree --no-commit-id --name-only -r $SHA
-          if [[ -z "$(git diff-tree --no-commit-id --name-only -r $SHA $PATHSPEC)" ]]; then CHANGED="0"; else CHANGED="1"; fi
-          echo "CHANGED: $CHANGED"
-          #echo ::set-output name=changed::$CHANGED
+        uses: rdietrick/did-files-change@test-workflow
+        with:
+          sha: ${{ github.sha }}
+          pathspec: .
+
+      # - name: Check has changes
+      #   id: has-changes
+      #   env:
+      #     SHA: ${{ github.sha }}
+      #     PATHSPEC: "."
+      #   run: |
+      #     echo "SHA: $SHA"
+      #     git log -1
+      #     git diff-tree --no-commit-id --name-only -r $SHA
+      #     if [[ -z "$(git diff-tree --no-commit-id --name-only -r $SHA $PATHSPEC)" ]]; then CHANGED="0"; else CHANGED="1"; fi
+      #     echo "CHANGED: $CHANGED"
+      #     #echo ::set-output name=changed::$CHANGED
 
       - name: Debug
         run: |
