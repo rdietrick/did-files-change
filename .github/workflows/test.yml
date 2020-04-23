@@ -21,5 +21,5 @@ jobs:
           echo "Has changes: ${{ steps.check-changes.outputs.changed }}"
 
       - name: Test Condition
-        if: steps.check-changes.outputs.changed == "1"
+        if: steps.check-changes.outputs.changed == '1'
         run: echo "Something changed"
