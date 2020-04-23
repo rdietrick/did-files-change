@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
       
       # - name: Check has changes
       #   id: has-changes
@@ -22,7 +24,7 @@ jobs:
       - name: Check has changes
         id: has-changes
         env:
-          SHA: b6382e68e1042e4376ce5dcd78cefbcf6fa352b1
+          SHA: ${{ github.sha }}
           PATHSPEC: "."
         run: |
           echo "SHA: $SHA"
