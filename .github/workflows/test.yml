@@ -21,9 +21,10 @@ jobs:
 
       - name: Check has changes
         id: has-changes
+        env:
+          SHA: ${{ github.sha }}
+          PATHSPEC: "."
         run: |
-        PATHSPEC="."
-        SHA=${{ github.sha }}
         echo "SHA: $SHA"
         if [[ -z "$(git diff-tree --no-commit-id --name-only -r $SHA $PATHSPEC)" ]]; then CHANGED="0"; else CHANGED="1"; fi
         echo ::set-output name=changed::$CHANGED
