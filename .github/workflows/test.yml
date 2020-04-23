@@ -16,9 +16,8 @@ jobs:
         id: has-changes
         uses: rdietrick/did-files-change@test-workflow
         with:
-          sha: fdc7f7c7cc5442ec3a34e8c00b0b1eb61661e2f6
-          # sha: ${{ github.sha }}
-          #pathspec: test
+          sha: ${{ github.sha }}
+          pathspec: .
 
       - name: Debug
         run: |
