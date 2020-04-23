@@ -14,7 +14,7 @@ jobs:
         id: check-changes
         uses: rdietrick/did-files-change@v1.0
         with:
-          pathspec: .
+          pathspec: test
 
       - name: Debug
         run: |
