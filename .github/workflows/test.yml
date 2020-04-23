@@ -22,7 +22,7 @@ jobs:
       - name: Check has changes
         id: has-changes
         env:
-          SHA: ${{ github.sha }}
+          SHA: b6382e68e1042e4376ce5dcd78cefbcf6fa352b1
           PATHSPEC: "."
         run: |
           echo "SHA: $SHA"
