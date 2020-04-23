@@ -3,20 +3,21 @@ on:
   push:
     branches:
       - 'test-workflow'
-
+      
 jobs:
-    build:
-        name: Test
-        runs-on: ubuntu-latest
-        steps:
-        - name: Checkout
-            uses: actions/checkout@v2
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Check has changes
+        id: has-changes
+        uses: rdietrick/did-files-change@v0.2-alpha
+        with:
+          pathspec: test
 
-        - name: Check has changes
-            id: has-changes
-            uses: rdietrick/did-files-change@v0.1-alpha
-            with:
-                - pathspec: test
-
-        - name: Debug
-          run: echo "Has changes: ${{ steps.id.has-changes.outputs.changed }}"
+      - name: Debug
+        run: |
+          echo "Has changes: ${{ steps.id.has-changes.outputs.changed }}"
