@@ -12,12 +12,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
+      # - name: Check has changes
+      #   id: has-changes
+      #   uses: rdietrick/did-files-change@test-workflow
+      #   with:
+      #     sha: ${{ github.sha }}
+      #     pathspec: .
+
       - name: Check has changes
         id: has-changes
-        uses: rdietrick/did-files-change@test-workflow
-        with:
-          sha: ${{ github.sha }}
-          pathspec: .
+        run: |
+        PATHSPEC="."
+        if [[ -z "$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} $PATHSPEC)" ]]; then CHANGED="0"; else CHANGED="1"; f1
+        echo ::set-output name=changed::$CHANGED
 
       - name: Debug
         run: |
