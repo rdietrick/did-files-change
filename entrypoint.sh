@@ -7,7 +7,8 @@ echo "Checking diffs in commit $SHA"
 
 RES=`git diff-tree --no-commit-id --name-only -r $SHA $PATHSPEC`
 echo "RESULTS: $RES"
-git rev-parse HEAD
+
+git show
 
 function check() {
   if [[ -z "$(git diff-tree --no-commit-id --name-only -r $SHA $PATHSPEC)" ]];
