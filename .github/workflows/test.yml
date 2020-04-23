@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 2
       
       - name: Check has changes
-        id: has-changes
+        id: check-changes
         uses: rdietrick/did-files-change@test-workflow
         with:
           sha: ${{ github.sha }}
@@ -23,4 +23,4 @@ jobs:
 
       - name: Debug
         run: |
-          echo "Has changes: ${{ steps.id.has-changes.outputs.changed }}"
+          echo "Has changes: ${{ steps.id.check-changes.outputs.changed }}"
