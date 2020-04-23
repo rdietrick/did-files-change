@@ -23,7 +23,7 @@ jobs:
         id: has-changes
         run: |
         PATHSPEC="."
-        if [[ -z "$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} $PATHSPEC)" ]]; then CHANGED="0"; else CHANGED="1"; f1
+        if [[ -z "$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} $PATHSPEC)" ]]; then CHANGED="0"; else CHANGED="1"; fi
         echo ::set-output name=changed::$CHANGED
 
       - name: Debug
