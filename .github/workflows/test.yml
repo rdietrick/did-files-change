@@ -1,5 +1,8 @@
 name: Test
-on: push
+on:
+  push:
+    branches:
+      - 'master'
       
 jobs:
   build:
@@ -12,7 +15,7 @@ jobs:
       
       - name: Check has changes
         id: check-changes-root
-        uses: rdietrick/did-files-change@v1.0
+        uses: rdietrick/did-files-change@master
         with:
           pathspec: .
 
