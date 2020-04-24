@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       
       - name: Check has changes
         id: check-changes-root
