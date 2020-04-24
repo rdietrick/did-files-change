@@ -30,12 +30,12 @@ jobs:
         uses: rdietrick/did-files-change@v1.0
         with:
           pathspec: test
-  
-        - name: Debug
-          run: |
-            echo "Has changes in test dir: ${{ steps.check-changes-test.outputs.changed }}"
-  
-        - name: Test
-          if: steps.check-changes-test.outputs.changed == '1'
-          run: |
-            echo "Files did change!"
+
+      - name: Debug
+        run: |
+          echo "Has changes in test dir: ${{ steps.check-changes-test.outputs.changed }}"
+
+      - name: Test
+        if: steps.check-changes-test.outputs.changed == '1'
+        run: |
+          echo "Files did change!"
