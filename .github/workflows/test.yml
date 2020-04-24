@@ -11,16 +11,31 @@ jobs:
           fetch-depth: 2
       
       - name: Check has changes
-        id: check-changes
+        id: check-changes-root
         uses: rdietrick/did-files-change@v1.0
         with:
           pathspec: .
 
       - name: Debug
         run: |
-          echo "Has changes: ${{ steps.check-changes.outputs.changed }}"
+          echo "Has changes: ${{ steps.check-changes-root.outputs.changed }}"
 
       - name: Test
-        if: steps.check-changes.outputs.changed == '1'
+        if: steps.check-changes-root.outputs.changed == '1'
+        run: |
+          echo "Files did change!"
+
+      - name: Check has changes
+        id: check-changes-test
+        uses: rdietrick/did-files-change@v1.0
+        with:
+          pathspec: test
+
+      - name: Debug
+        run: |
+          echo "Has changes in test dir: ${{ steps.check-changes-test.outputs.changed }}"
+
+      - name: Test
+        if: steps.check-changes-test.outputs.changed == '1'
         run: |
           echo "Files did change!"
