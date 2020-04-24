@@ -21,6 +21,6 @@ jobs:
           echo "Has changes: ${{ steps.check-changes.outputs.changed }}"
 
       - name: Test
-        if: steps.rcheck-changes.outputs.changed == '1'
+        if: steps.check-changes.outputs.changed == '1'
         run: |
           echo "Files did change!"
