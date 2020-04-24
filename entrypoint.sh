@@ -5,7 +5,7 @@ SHA=$1
 PATHSPEC=$2
 
 function check() {
-  if [[ -z "$(git diff-tree --no-commit-id --name-only -r $SHA $PATHSPEC)" ]];
+  if [[ -z "$(git diff-tree --no-commit-id --name-only -r -m $SHA $PATHSPEC)" ]];
   then
     echo "0"
   else
