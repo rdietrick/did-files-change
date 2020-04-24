@@ -25,7 +25,7 @@ jobs:
         run: |
           echo "Files did change!"
 
-      - name: Check has changes
+      - name: Check has changes in test
         id: check-changes-test
         uses: rdietrick/did-files-change@v1.0
         with:
