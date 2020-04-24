@@ -28,8 +28,8 @@ jobs:
         # Checkout is required before did-files-change
         uses: actions/checkout@v2
         with:
-          fetch-depth: 2
-          # be sure to set fetch-depth to at least 2
+          fetch-depth: 0
+          # be sure to override the default value (1) for fetch-depth
       
       - name: Check changes
         id: check-changes
