@@ -15,7 +15,7 @@ jobs:
       
       - name: Check has changes
         id: check-changes-root
-        uses: rdietrick/did-files-change@v1.1
+        uses: rdietrick/did-files-change@v1.2a
         with:
           pathspec: .
 
@@ -30,7 +30,7 @@ jobs:
 
       - name: Check has changes in test
         id: check-changes-test
-        uses: rdietrick/did-files-change@v1.1
+        uses: rdietrick/did-files-change@v1.2a
         with:
           pathspec: test
 
