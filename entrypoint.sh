@@ -4,6 +4,8 @@ set -e
 SHA=$1
 PATHSPEC=$2
 
+git config --global --add safe.directory /github/workspace
+
 function check() {
   if [[ -z "$(git diff-tree --no-commit-id --name-only -m -r $SHA $PATHSPEC)" ]];
   then
