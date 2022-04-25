@@ -4,7 +4,8 @@ set -e
 SHA=$1
 PATHSPEC=$2
 
-git config --global --add safe.directory /github/workspace
+# this is needed to grant the ensuing git commands to access to the main workflow's repo
+git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
 function check() {
   if [[ -z "$(git diff-tree --no-commit-id --name-only -m -r $SHA $PATHSPEC)" ]];
