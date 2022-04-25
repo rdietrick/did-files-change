@@ -4,11 +4,7 @@ set -e
 SHA=$1
 PATHSPEC=$2
 
-# echo "Debugging info"
-# pwd
-# ls -la /
-# ls -la .
-# ls -la ../
+# this is needed to grant the ensuing git commands to access to the main workflow's repo
 git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
 function check() {
