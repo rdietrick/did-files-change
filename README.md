@@ -33,7 +33,7 @@ jobs:
       
       - name: Check changes
         id: check-changes
-        uses: rdietrick/did-files-change@v1.2
+        uses: rdietrick/did-files-change@v1.3.3
         with:
           pathspec: test
 
