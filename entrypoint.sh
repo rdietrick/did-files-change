@@ -16,4 +16,4 @@ function check() {
   fi
 }
 
-echo ::set-output name=changed::$(check)
+echo "changed=$(check)" >> $GITHUB_OUTPUT
